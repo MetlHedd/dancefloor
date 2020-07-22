@@ -13,7 +13,9 @@ var players : Dictionary = {}
 var self_data : Dictionary = {
     "name": "Player0",
     "is_alive": false,
-    "position": Vector2(200, 100)
+    "position": Vector2(200, 100),
+    "skin": "Cat",
+    "palette": "default"
 }
 master var players_alive : int = 0
 
@@ -37,7 +39,9 @@ func reset_data() -> void:
     self_data = {
         "name": "Player0",
         "is_alive": false,
-        "position": Vector2(200, 100)
+        "position": Vector2(200, 100),
+        "skin": "Cat",
+        "palette": "default"
     }
     current_map_json_string = ""
     current_map_json = {}
@@ -69,6 +73,7 @@ func create_server(player_name = "Player0", port = default_port, slots = default
 
     # Pass the players paramaters to the self_data
     self_data.name = player_name
+    self_data.skin = Defines.selected_skin
 
     # Since peer 1 is the master it will be added to the players lsit
     players[1] = self_data
@@ -80,6 +85,9 @@ func create_server(player_name = "Player0", port = default_port, slots = default
         get_tree().set_network_peer(ws_server)
     else:
         var peer : NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
+
+        peer.compression_mode = NetworkedMultiplayerENet.COMPRESS_ZSTD
+
         var network_error = peer.create_server(port, slots)
 
         if network_error != OK:
@@ -118,6 +126,9 @@ func connect_to_server(player_name = "Guest", ip = default_ip, port = default_po
         get_tree().set_network_peer(ws_server)
     else:
         var peer : NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
+
+        peer.compression_mode = NetworkedMultiplayerENet.COMPRESS_ZSTD
+
         var network_error = peer.create_client(ip, port)
 
         if network_error != OK:

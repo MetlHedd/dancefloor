@@ -1,25 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Themes/default-theme.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Fonts/Nunito/Nunito-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Styles/Fonts/Nunito/Nunio-Bold-24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Themes/MainMenuTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Scripts/UI/SkinSelector.gd" type="Script" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[node name="SkinSelector" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -0.793701
-margin_bottom = -0.793701
-theme = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Popup" type="Popup" parent="."]
-visible = true
+[node name="SkinSelector" type="Popup"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -28,42 +13,86 @@ margin_left = -300.0
 margin_top = -185.0
 margin_right = 300.0
 margin_bottom = 185.0
-
-[node name="Panel" type="Panel" parent="Popup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Popup/Panel"]
+[node name="TitleBG" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -340.0
+rect_min_size = Vector2( 0, 40 )
+color = Color( 0.917647, 0.941176, 0.968627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WindowTitle" type="Label" parent="Popup/Panel/VBoxContainer"]
-margin_right = 600.0
-margin_bottom = 23.0
-custom_fonts/font = SubResource( 1 )
-text = "Skin selector:"
+[node name="Label" type="Label" parent="TitleBG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.254902, 0.329412, 0.4, 1 )
+text = "Skin Selector"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HSeparator" type="HSeparator" parent="Popup/Panel/VBoxContainer"]
-margin_top = 27.0
-margin_right = 600.0
-margin_bottom = 33.0
+[node name="ContentBG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+margin_bottom = -40.0
+rect_min_size = Vector2( 0, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CenterContainer" type="CenterContainer" parent="Popup/Panel/VBoxContainer"]
-margin_top = 37.0
-margin_right = 600.0
-margin_bottom = 357.0
-
-[node name="GridContainer" type="GridContainer" parent="Popup/Panel/VBoxContainer/CenterContainer"]
-margin_left = 44.0
-margin_right = 556.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 512, 320 )
+[node name="Grid" type="GridContainer" parent="ContentBG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
 columns = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 330.0
+rect_min_size = Vector2( 0, 40 )
+color = Color( 0.917647, 0.941176, 0.968627, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.5
+margin_top = 2.5
+margin_right = -2.5
+margin_bottom = -2.5
+rect_min_size = Vector2( 0, 35 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Buttons/HBoxContainer"]
+margin_left = 272.0
+margin_right = 322.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+theme = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "Back"

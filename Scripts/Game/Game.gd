@@ -20,11 +20,11 @@ func _ready():
 
 func _init_player():
     # Creates the local player
-    own_player = $World.new_player(get_tree().get_network_unique_id(), Network.self_data.name, Network.self_data.position, Network.self_data.is_alive)
+    own_player = $World.new_player(get_tree().get_network_unique_id(), Network.self_data.name, Network.self_data.skin, Network.self_data.position, Network.self_data.is_alive)
     own_player.z_index = 2
 
 func _on_player_join(player_id, player_info) -> void:
-    $World.new_player(player_id, player_info.name, player_info.position, player_info.is_alive)
+    $World.new_player(player_id, player_info.name, player_info.skin, player_info.position, player_info.is_alive)
     
     $UI.update_player_list()
 

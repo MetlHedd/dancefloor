@@ -210,9 +210,6 @@ margin_bottom = 164.0
 rect_min_size = Vector2( 0, 30 )
 text = "Join!"
 
-[node name="SkinSelector" parent="." instance=ExtResource( 3 )]
-visible = false
-
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -221,3 +218,5 @@ margin_top = 30.0
 margin_right = 104.5
 margin_bottom = 64.0
 text = "Dancefloor is here!"
+
+[node name="SkinSelector" parent="." instance=ExtResource( 3 )]

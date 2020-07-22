@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-e5bcc12b1c827a46ab4bc1d5f38dd105.stex"
+path="res://.import/all-around-30-32x.png-f6216de56323e599f6bbffce28c6b051.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/player.png"
-dest_files=[ "res://.import/player.png-e5bcc12b1c827a46ab4bc1d5f38dd105.stex" ]
+source_file="res://Assets/Sprites/Player/Skins/Cat/all-around-30-32x.png"
+dest_files=[ "res://.import/all-around-30-32x.png-f6216de56323e599f6bbffce28c6b051.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
