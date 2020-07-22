@@ -1,0 +1,42 @@
+{
+    "author": "Breno lindo",
+    "grounds": [
+        {
+            "type": "Wood",
+            "position": {
+                "x": 128,
+                "y": 200
+            },
+            "size": {
+                "x": 192,
+                "y": 96
+            }
+        },
+        {
+            "type": "Wood",
+            "position": {
+                "x": 400,
+                "y": 200
+            },
+            "size": {
+                "x": 192,
+                "y": 96
+            }
+        },
+        {
+            "type": "Wood",
+            "position": {
+                "x": 672,
+                "y": 200
+            },
+            "size": {
+                "x": 192,
+                "y": 96
+            }
+        }
+    ],
+    "playerSpawnPosition": {
+        "x": 200,
+        "y": 100
+    }
+}

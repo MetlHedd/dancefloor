@@ -1,0 +1,223 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Game/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/MainMenuTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Scenes/UI/SkinSelector.tscn" type="PackedScene" id=3]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.840881
+margin_top = -1.68176
+margin_right = -0.840881
+margin_bottom = -1.68176
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.780392, 0.815686, 0.854902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_right = 88.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 200, 200 )
+window_title = "Alerta!"
+dialog_text = "aaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 200 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
+margin_top = 11.0
+margin_right = 200.0
+margin_bottom = 45.0
+text = "Write a name:"
+align = 1
+
+[node name="PlayerName" type="LineEdit" parent="Menu"]
+margin_top = 49.0
+margin_right = 200.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 0, 30 )
+max_length = 16
+placeholder_text = "Guest"
+
+[node name="SkinButton" type="Button" parent="Menu"]
+margin_top = 83.0
+margin_right = 200.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 0, 30 )
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 0.501961 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = "Select a skin"
+
+[node name="HSeparator" type="HSeparator" parent="Menu"]
+margin_top = 117.0
+margin_right = 200.0
+margin_bottom = 121.0
+
+[node name="JoinButton" type="Button" parent="Menu"]
+margin_top = 125.0
+margin_right = 200.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 0, 30 )
+text = "Join a game"
+
+[node name="HostButton" type="Button" parent="Menu"]
+margin_top = 159.0
+margin_right = 200.0
+margin_bottom = 189.0
+rect_min_size = Vector2( 0, 30 )
+text = "Host a server"
+
+[node name="HostMenu" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 200 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HostMenu"]
+margin_top = 48.0
+margin_right = 200.0
+margin_bottom = 68.0
+text = "Select a port:"
+align = 1
+valign = 1
+
+[node name="ServerPort" type="SpinBox" parent="HostMenu"]
+margin_top = 72.0
+margin_right = 200.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 0, 30 )
+max_value = 50000.0
+page = 1000.0
+value = 9080.0
+allow_greater = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HostMenu"]
+margin_top = 100.0
+margin_right = 200.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 30 )
+text = "Customize server"
+
+[node name="CreateServerButton" type="Button" parent="HostMenu"]
+margin_top = 128.0
+margin_right = 200.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 0, 30 )
+text = "Create server!"
+
+[node name="JoinMenu" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 200 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPLabel" type="Label" parent="JoinMenu"]
+margin_top = 36.0
+margin_right = 200.0
+margin_bottom = 56.0
+text = "Server address:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="JoinMenu"]
+margin_top = 60.0
+margin_right = 200.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 30 )
+text = "127.0.0.1"
+
+[node name="PortLabel" type="Label" parent="JoinMenu"]
+margin_top = 88.0
+margin_right = 200.0
+margin_bottom = 108.0
+text = "Server port:"
+align = 1
+valign = 1
+
+[node name="ServerPort" type="SpinBox" parent="JoinMenu"]
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 30 )
+max_value = 50000.0
+page = 1000.0
+value = 9080.0
+allow_greater = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinServerButton" type="Button" parent="JoinMenu"]
+margin_top = 140.0
+margin_right = 200.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 30 )
+text = "Join!"
+
+[node name="SkinSelector" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -104.5
+margin_top = 30.0
+margin_right = 104.5
+margin_bottom = 64.0
+text = "Dancefloor is here!"

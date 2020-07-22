@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Game/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Game/World.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Themes/default-theme.tres" type="Theme" id=4]
+[ext_resource path="res://Scenes/UI/AdminUI.tscn" type="PackedScene" id=5]
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="World" parent="." instance=ExtResource( 3 )]
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
+
+[node name="AdminUI" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="GroundChangeTimer" type="Timer" parent="."]

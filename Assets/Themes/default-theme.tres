@@ -1,0 +1,119 @@
+[gd_resource type="Theme" load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Fonts/Nunito/Nunito-Regular-14.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Nunito/Nunito-BoldItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/Nunito/Nunito-Italic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/Nunito/Nunito-Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 1, 1, 1, 0.25098 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 5.0
+bg_color = Color( 0.129412, 0.133333, 0.137255, 1 )
+border_color = Color( 0.427451, 0.439216, 0.470588, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.129412, 0.133333, 0.137255, 1 )
+border_width_bottom = 2
+border_color = Color( 0.168627, 0.25098, 0.341176, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.254902, 0.270588, 0.345098, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.427451, 0.439216, 0.470588, 1 )
+expand_margin_top = 30.0
+
+[resource]
+default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+HSeparator/constants/separation = 6
+HSeparator/styles/separator = SubResource( 5 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 1, 1, 1, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.996078, 0.721569, 0.0117647, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource( 6 )
+LineEdit/styles/read_only = null
+Panel/styles/panel = SubResource( 7 )
+PopupDialog/styles/panel = null
+PopupPanel/styles/panel = null
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 9 )
+RichTextLabel/fonts/italics_font = SubResource( 10 )
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = ExtResource( 1 )
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+VSeparator/constants/separation = 6
+VSeparator/styles/separator = SubResource( 5 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = SubResource( 11 )
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = SubResource( 12 )
