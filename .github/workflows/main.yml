@@ -16,14 +16,21 @@ jobs:
     container:
       image: barichello/godot-ci:3.2.2
     steps:
+      - name: Setup Folders
+        run: |
+          cd ~
+          mkdir $EXPORT_NAME
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          path: '~/dancefloor'
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Build
         run: |
+          cd ~
           mkdir -v -p build/windows/32
           cd $EXPORT_NAME
           godot -v --export "Windows Desktop" ../build/windows/32/$EXPORT_NAME.exe
