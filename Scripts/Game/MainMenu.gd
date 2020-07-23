@@ -48,7 +48,7 @@ func host_server() -> void:
 
 # Go to game and join the specified server
 func join_server() -> void:
-	Network.connect_to_server($Menu/PlayerName.text, $JoinMenu/LineEdit.text, $JoinMenu/ServerPort.value)
+	Network.connect_to_server($Menu/PlayerName.text, $JoinMenu/ServerIP.text, $JoinMenu/ServerPort.value)
 	get_tree().change_scene(game_scene_path)
 
 

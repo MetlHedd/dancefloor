@@ -87,7 +87,7 @@ func create_server(player_name = "Player0", port = default_port, slots = default
     else:
         var peer : NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
 
-        peer.compression_mode = NetworkedMultiplayerENet.COMPRESS_ZSTD
+        peer.compression_mode = NetworkedMultiplayerENet.COMPRESS_RANGE_CODER
 
         var network_error = peer.create_server(port, slots)
 
@@ -130,7 +130,7 @@ func connect_to_server(player_name = "Guest", ip = default_ip, port = default_po
     else:
         var peer : NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
 
-        peer.compression_mode = NetworkedMultiplayerENet.COMPRESS_ZSTD
+        peer.compression_mode = NetworkedMultiplayerENet.COMPRESS_RANGE_CODER
 
         var network_error = peer.create_client(ip, port)
 

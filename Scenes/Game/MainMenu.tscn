@@ -51,24 +51,23 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Menu"]
-margin_top = 11.0
 margin_right = 200.0
-margin_bottom = 45.0
+margin_bottom = 34.0
 text = "Write a name:"
 align = 1
 
 [node name="PlayerName" type="LineEdit" parent="Menu"]
-margin_top = 49.0
+margin_top = 38.0
 margin_right = 200.0
-margin_bottom = 79.0
+margin_bottom = 68.0
 rect_min_size = Vector2( 0, 30 )
 max_length = 16
 placeholder_text = "Guest"
 
 [node name="SkinButton" type="Button" parent="Menu"]
-margin_top = 83.0
+margin_top = 72.0
 margin_right = 200.0
-margin_bottom = 113.0
+margin_bottom = 102.0
 rect_min_size = Vector2( 0, 30 )
 focus_mode = 0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 0.501961 )
@@ -78,22 +77,35 @@ custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 enabled_focus_mode = 0
 text = "Select a skin"
 
-[node name="HSeparator" type="HSeparator" parent="Menu"]
-margin_top = 117.0
+[node name="MutatorsButton" type="Button" parent="Menu"]
+margin_top = 106.0
 margin_right = 200.0
-margin_bottom = 121.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 30 )
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 0.501961 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = "Select mutators"
+
+[node name="HSeparator" type="HSeparator" parent="Menu"]
+margin_top = 140.0
+margin_right = 200.0
+margin_bottom = 144.0
 
 [node name="JoinButton" type="Button" parent="Menu"]
-margin_top = 125.0
+margin_top = 148.0
 margin_right = 200.0
-margin_bottom = 155.0
+margin_bottom = 178.0
 rect_min_size = Vector2( 0, 30 )
 text = "Join a game"
 
 [node name="HostButton" type="Button" parent="Menu"]
-margin_top = 159.0
+margin_top = 182.0
 margin_right = 200.0
-margin_bottom = 189.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 0, 30 )
 text = "Host a server"
 
@@ -165,9 +177,9 @@ __meta__ = {
 }
 
 [node name="IPLabel" type="Label" parent="JoinMenu"]
-margin_top = 36.0
+margin_top = 13.0
 margin_right = 200.0
-margin_bottom = 56.0
+margin_bottom = 47.0
 text = "Server address:"
 align = 1
 valign = 1
@@ -175,25 +187,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="JoinMenu"]
-margin_top = 60.0
+[node name="ServerIP" type="LineEdit" parent="JoinMenu"]
+margin_top = 51.0
 margin_right = 200.0
-margin_bottom = 84.0
+margin_bottom = 81.0
 rect_min_size = Vector2( 0, 30 )
 text = "127.0.0.1"
 
 [node name="PortLabel" type="Label" parent="JoinMenu"]
-margin_top = 88.0
+margin_top = 85.0
 margin_right = 200.0
-margin_bottom = 108.0
+margin_bottom = 119.0
 text = "Server port:"
 align = 1
 valign = 1
 
 [node name="ServerPort" type="SpinBox" parent="JoinMenu"]
-margin_top = 112.0
+margin_top = 123.0
 margin_right = 200.0
-margin_bottom = 136.0
+margin_bottom = 153.0
 rect_min_size = Vector2( 0, 30 )
 max_value = 50000.0
 page = 1000.0
@@ -204,9 +216,9 @@ __meta__ = {
 }
 
 [node name="JoinServerButton" type="Button" parent="JoinMenu"]
-margin_top = 140.0
+margin_top = 157.0
 margin_right = 200.0
-margin_bottom = 164.0
+margin_bottom = 187.0
 rect_min_size = Vector2( 0, 30 )
 text = "Join!"
 
