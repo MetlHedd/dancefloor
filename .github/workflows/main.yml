@@ -28,6 +28,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           cd git
+          ls
           mkdir -v -p build/windows/32
           cd $EXPORT_NAME
           godot -v --export "Windows Desktop (32 bits)" ../build/windows/32/$EXPORT_NAME.exe
