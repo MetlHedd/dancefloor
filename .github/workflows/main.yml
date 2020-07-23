@@ -27,8 +27,7 @@ jobs:
       - name: Build
         run: |
           cd git
-          ls
-          mkdir -v -p build/windows/32
+          mkdir -v -p ../build/windows/32
           godot -v --export "Windows Desktop (32 bits)" ../build/windows/32/$EXPORT_NAME.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
