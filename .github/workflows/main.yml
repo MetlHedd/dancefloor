@@ -34,3 +34,27 @@ jobs:
         with:
           name: windows-32bits
           path: build/windows/32
+  export-windows-32-bits-debug:
+    name: Windows (32 bits) - Debug
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.2.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: git
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Build
+        run: |
+          cd git
+          mkdir -v -p ../build/debug/windows/32
+          godot -v --export-debug "Windows Desktop (32 bits)" ../build/debug/windows/32/$EXPORT_NAME.exe
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: windows-32bits-debug
+          path: build/debug/windows/32
