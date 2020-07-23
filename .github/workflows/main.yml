@@ -7,7 +7,7 @@ on:
   
 env:
   GODOT_VERSION: 3.2.2
-  EXPORT_NAME: Dancefloor
+  EXPORT_NAME: dancefloor
 
 jobs:
   export-windows-32-bits:
