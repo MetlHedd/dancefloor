@@ -18,15 +18,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: '~/dancefloor'
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Build
         run: |
-          cd ~
           mkdir -v -p build/windows/32
           cd $EXPORT_NAME
           godot -v --export "Windows Desktop (32 bits)" ../build/windows/32/$EXPORT_NAME.exe
@@ -35,30 +32,3 @@ jobs:
         with:
           name: windows-32bits
           path: build/windows/32
-  export-windows-32-bits-debug:
-    name: Windows (32 bits) - Debug
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:3.2.2
-    steps:
-      - name: Setup Folders
-        run: |
-          cd ~
-          mkdir $EXPORT_NAME
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Build
-        run: |
-          cd ~
-          mkdir -v -p build/debug/windows/32
-          cd $EXPORT_NAME
-          godot -v --export "Windows Desktop (32 bits)" ../build/windows/debug/32/$EXPORT_NAME.exe
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: windows-debug-32bits
-          path: build/debug/windows/32
