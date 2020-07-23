@@ -17,7 +17,7 @@ func _ready():
     for type in Defines.grounds_types_availables:
         grounds_scenes[type] = load("res://Scenes/Game/Grounds/" + type + "Ground.tscn")
 
-func new_player(id : int, player_name : String, skin : String, position = Vector2(0, 0), is_alive = false):
+func new_player(id : int, player_name : String, skin : String, palette : String, position = Vector2(0, 0), is_alive = false):
     var player_instance = player_scene.instance()
     
     # Change player initial properties
@@ -26,6 +26,7 @@ func new_player(id : int, player_name : String, skin : String, position = Vector
     player_instance.set_network_master(id)
     player_instance.player_id = id
     player_instance.player_skin = skin
+    player_instance.player_palette = palette
     
     # Add player to the scene
     $".".add_child(player_instance)

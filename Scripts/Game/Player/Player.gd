@@ -21,6 +21,7 @@ var is_side_collided : bool = false
 # Server and client properties
 var player_id : int = 0
 var player_skin : String = "Cat"
+var player_palette : String = "Default"
 
 # Position error treeshold
 const position_error_treeshold : float = 25.0
@@ -43,6 +44,12 @@ func _ready():
     # Set player skin
     if player_skin in Defines.avalaible_skins:
         $RigidBody2D/Sprite.set_texture(load("res://Assets/Sprites/Player/Skins/%s/skin-r.png" % [player_skin]))
+
+        var material = $RigidBody2D/Sprite.material.duplicate()
+
+        material.set_shader_param("palette", load("res://Assets/Sprites/Player/Skins/%s/Palettes/%s.png" % [player_skin, player_palette]))
+
+        $RigidBody2D/Sprite.material = material
 
 func update_input() -> void:
     if not is_alive:

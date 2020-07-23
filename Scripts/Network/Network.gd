@@ -74,6 +74,7 @@ func create_server(player_name = "Player0", port = default_port, slots = default
     # Pass the players paramaters to the self_data
     self_data.name = player_name
     self_data.skin = Defines.selected_skin
+    self_data.palette = Defines.selected_palette
 
     # Since peer 1 is the master it will be added to the players lsit
     players[1] = self_data
@@ -115,6 +116,8 @@ func connect_to_server(player_name = "Guest", ip = default_ip, port = default_po
 
     # Pass the players paramaters to the self_data
     self_data.name = player_name
+    self_data.skin = Defines.selected_skin
+    self_data.palette = Defines.selected_palette
 
     # Network signals
     get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -207,7 +210,7 @@ remote func _request_players(request_from_id) -> void:
             if peer_id != request_from_id:
                 rpc_id(request_from_id, '_send_player_information', peer_id, players[peer_id])
 
-remote func _send_player_information(id, info):
+remote func _send_player_information(id, info) -> void:
     players[id] = info
     
     get_node("/root/Game")._on_player_join(id, info)

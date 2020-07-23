@@ -11,7 +11,7 @@ jobs:
     # Always use ubuntu-latest for this action
     runs-on: ubuntu-latest
     # Job name, can be anything
-    name: Export for all platforms
+    name: Checkout
     steps:
       # Always include the checkout step so that 
       # your project is available for Godot to export
@@ -20,7 +20,7 @@ jobs:
       # Ensure that you get the entire project history
       with:
         fetch-depth: 0
-    - name: Windows Desktop (32 bits)
+    - name: Export
       # Use latest version (see releases for all versions)
       uses: firebelley/godot-export@v2.2.0
       with:
