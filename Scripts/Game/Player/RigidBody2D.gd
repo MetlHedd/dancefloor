@@ -9,7 +9,7 @@ const Direction = {
 }
 
 # Movement properties
-const acceleration : float = 1000.0
+const acceleration : float = 10000.0
 const move_speed : float = 225.0
 const jump_speed : float = 250.0
 const max_top_speed : float = 1000.0

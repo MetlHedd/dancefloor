@@ -11,7 +11,7 @@ bg_color = Color( 0.882353, 0.905882, 0.921569, 0.501961 )
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.882353, 0.905882, 0.921569, 1 )
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 
 uniform sampler2D palette;
@@ -27,10 +27,10 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 5 )
+shader = SubResource( 3 )
 shader_param/palette = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 8
 use_mipmaps = true
 use_filter = true
@@ -80,7 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 2.0
 margin_bottom = -50.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "Cat"
 align = 1
 __meta__ = {
