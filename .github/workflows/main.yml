@@ -11,15 +11,11 @@ env:
 
 jobs:
   export-windows-32-bits:
-    name: Windows (32 bits)
+    name: Windows (32 bits) - Release
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:3.2.2
     steps:
-      - name: Setup Folders
-        run: |
-          cd ~
-          mkdir $EXPORT_NAME
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -40,7 +36,7 @@ jobs:
           name: windows-32bits
           path: build/windows/32
   export-windows-32-bits-debug:
-    name: Windows (32 bits)
+    name: Windows (32 bits) - Debug
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:3.2.2
