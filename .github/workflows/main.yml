@@ -47,8 +47,6 @@ jobs:
           mkdir $EXPORT_NAME
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: '~/dancefloor'
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
